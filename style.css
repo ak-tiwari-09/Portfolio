@@ -1,0 +1,257 @@
+    :root {
+      --bg: #141e30;
+      --text: #fff;
+      --card: #2d3e50;
+    }
+    body.light {
+      --bg: #f4f4f4;
+      --text: #1a1a1a;
+      --card: #fff;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: 0.3s;
+    }
+    header {
+      padding: 2rem;
+      text-align: center;
+      background: #1f2a40;
+      animation: fadeInDown 1s ease-in-out;
+    }
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      cursor: pointer;
+      background: var(--card);
+      padding: 0.5rem;
+      border-radius: 50%;
+      border: 2px solid var(--text);
+      box-shadow: 0 0 8px var(--text);
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    .toggle-btn:hover {
+      box-shadow: 0 0 15px var(--text);
+    }
+    .toggle-btn img {
+      width: 28px;
+      height: 28px;
+    }
+    .light .toggle-btn img {
+      filter: invert(39%) sepia(100%) saturate(749%) hue-rotate(180deg) brightness(95%) contrast(94%);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(90deg, #00ffe0, #ff00d4);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      animation: glowText 2s infinite alternate;
+    }
+    @keyframes glowText {
+      from { text-shadow: 0 0 10px rgba(255,255,255,0.2); }
+      to { text-shadow: 0 0 20px rgba(255,255,255,0.8); }
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+    nav {
+      background: var(--card);
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s, background-color 0.3s, padding 0.3s;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+    }
+    nav a:hover {
+      background-color: aqua;
+      color: var(--bg);
+      border: 1px solid aqua;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1.2s ease-in-out forwards;
+    }
+    section h2 {
+      background-color: #e0e0e0;
+      color: #1a1a1a;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    .projects, .skills {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .projects .card, .skills .card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+    .projects .card:hover, .skills .card:hover {
+      transform: scale(1.05);
+    }
+    .projects .card a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #4caf50;
+      text-decoration: none;
+    }
+    .projects .card img {
+      background-color: #e0e0e0;
+      padding: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    #resume a, #experience a {
+      display: inline-block;
+      background: #4caf50;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+
+    .card h3{
+        background-color: #2d3e50;
+        color: white;
+        padding: 10px;
+        width: fit-content;
+        border-radius: 15px;
+        justify-content: center;
+    }
+
+.certificates img {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 15px;
+  margin-top: 18px;
+  margin-bottom: 0.9rem;
+  background-color: #2d3e50;
+  transition: transform 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Tablet view */
+@media (max-width: 1024px) {
+  .certificates img {
+    max-width: 600px;
+  }
+}
+
+/* Phone view */
+@media (max-width: 600px) {
+  .certificates img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+}
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #1f2a40;
+      color: #aaa;
+    }
+
+
+
+
+    a {
+  margin: 0 10px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+  a:hover {
+  transform: scale(1.2);
+}
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 8px;
+    }
+
+
+
+
+    form button {
+      background: #4caf50;
+      padding: 0.75rem 1.5rem;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @media screen and (max-width: 768px) {
+      .projects, .skills {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      .projects, .skills {
+        grid-template-columns: 1fr;
+      }
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      header h1 {
+        font-size: 1.5rem;
+      }
+      header p {
+        font-size: 0.9rem;
+      }
+    }
